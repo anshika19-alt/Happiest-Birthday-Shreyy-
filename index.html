@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Shreyy!!</title>
+
+<style>
+/* Page Background */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #140000, #000000 75%);
+    font-family: 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+/* Moving mist / eerie effect */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: repeating-radial-gradient(circle, rgba(255,0,0,0.08) 0px, transparent 2px);
+    animation: drift 40s linear infinite;
+}
+
+@keyframes drift {
+    from { transform: translate(0,0); }
+    to { transform: translate(-300px,-300px); }
+}
+
+/* Floating particles */
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #ff3b3b;
+    box-shadow: 0 0 6px red;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(-10vh); opacity: 1; }
+    to { transform: translateY(110vh); opacity: 0; }
+}
+
+/* Center message box */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.7);
+    padding: 50px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(255,0,0,0.6);
+}
+
+/* Glowing heading */
+h1 {
+    font-size: 58px;
+    color: #ff2a2a;
+    letter-spacing: 6px;
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 15px #ff0000,
+        0 0 30px #ff0000,
+        0 0 60px #ff0000;
+    margin-bottom: 25px;
+}
+
+/* Text */
+p {
+    font-size: 20px;
+    color: #d6d6d6;
+    line-height: 1.7;
+}
+
+/* Button */
+button {
+    margin-top: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background: transparent;
+    color: #ff2a2a;
+    border: 1px solid #ff2a2a;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff2a2a;
+    color: black;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating particles generator -->
+<script>
+for (let i = 0; i < 80; i++) {
+    let p = document.createElement("div");
+    p.className = "particle";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = (4 + Math.random() * 6) + "s";
+    document.body.appendChild(p);
+}
+</script>
+
+<div class="container">
+    <h1>HAPPY BIRTHDAY SHREYY!! 🥳🎀💗🌻✨</h1>
+
+    <p>
+        Today... something special happened.<br>
+        The world changed.<br>
+        A legend was born.<br><br>
+
+        May your year be full of adventure,<br>
+        mystery, laughter, and lots of cake.<br><br>
+
+        Stay awesome.<br>
+        Stay fearless.<br>
+        And keep making life interesting 😌✨
+    </p>
+
+    <button onclick="alert('Birthday Mode Activated 🎂')">
+        Open Birthday Portal
+    </button>
+</div>
+
+</body>
+</html>
